@@ -1,0 +1,532 @@
+/*Main Rules*/
+:root {
+--body-color:#f5f5f5;
+--main-color:#0078ff;
+--secondary-color:#cde1f8;
+--section-title-color: #1e1e1e;
+--section-discription-color:#4e4e4e;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--body-color);
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.sectionTitle{
+    padding: 40px 0;
+}
+.sectionTitle h3{
+    font-size: 3rem;
+    color: var(--section-title-color);
+}
+.sectionTitle p{
+    color: var(--section-discription-color);
+    position: relative;
+    padding-bottom: 16px;
+}
+.sectionTitle p::after{
+    content: '';
+    position: absolute;
+    background-color: var(--main-color);
+    width: 40px;
+    height: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+.deepDrop{
+    position: relative;
+}
+.inside_menu {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    transform: translateX(-180px);
+    transition: all 0.8s;
+}
+
+
+.deepDrop:hover .inside_menu{
+    visibility: visible;
+}
+/*Main Rules*/
+/*Start The Hero Section*/
+/* Start Nav Bar */
+.navbar h1{
+    font-size: 1.75rem;
+}
+.navbar{
+    padding-block: 20px;
+    background-color: rgba(0, 0, 0, 0.842);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+.dropdown-toggle::after{
+    content: none;
+    }
+.navbar-expand-lg .navbar-nav .nav-link { 
+    padding: 10px 0 10px 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+}
+.navbar-expand-lg .navbar-nav .nav-link::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 30px; /*The Number Of The Padding*/
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    border: none !important; 
+    transition: all 0.3s;
+}
+.navbar .dropdown-menu a{
+    transition: all 0.5s;
+    color: #4e4e4e !important;
+}
+.navbar .dropdown-menu a:hover{
+    color: rgb(13, 110, 253) !important;
+}
+.navbar-expand-lg .navbar-nav .nav-link:hover::after{
+    width: 60%;
+}
+.navbar-expand-lg .navbar-nav .nav-link i{
+    font-size: 12px;
+}
+.navbar .deepDropDown a{
+    padding: 4px 16px !important;
+    font-weight: 400 !important;
+}
+
+/* End Nav Bar */
+.hero{
+    height: 100vh ;
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.hero::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero .hero-content{
+    text-align: center;
+    position: absolute;
+    z-index: 654;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.hero .hero-content h1{
+    font-size: 4.5rem;
+    margin-bottom: 24px;
+}
+/*Animated Text*/
+.hero .animated-text{
+    font-size: 2.5rem;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.hero .animated-text span{
+    position: relative;
+}
+
+.hero .animated-text span::before{
+    content: "Designer";
+    color: white;
+    animation: words 20s infinite;
+}
+
+.hero .animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 105%;
+    background-color: #000000;
+    border-left: 4px solid white;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 4px solid transparent;
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Designer";
+    }
+    21%,40%{
+        content: "Developer";
+    }
+    41%,60%{
+        content: "Freelancer";
+    }
+    61%,100%{
+        content: "Photographer";
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
+/*Start About Section*/
+.about{
+    padding-top: 64px;
+}
+.about .paddingClass{
+    padding: 60px 20px;
+    background-color: white;
+
+}
+.about .title p{
+    color: #4e4e4e;
+}
+.about .title span{
+    color: #1e1e1e;
+    font-size: 1.1rem;
+}
+.about .skills .progress{
+    background-color: var(--secondary-color);
+    height: 0.7rem;
+    border-radius: 0;
+    margin-top: 10px;
+}
+.about .skills .aboutCard span{
+    color: #4e4e4e;
+}
+.about .skills .progress::after{
+    content: '';
+    background-color:var(--main-color) ;
+    height: 0.7rem;
+    width: var(--width-after);
+}
+.about .skills .aboutCard{
+    margin-bottom: 20px;
+}
+.about h5{
+    position: relative;
+    padding-block: 10px;
+
+}
+.about h5:after{
+    content: '';
+    background-color: var(--main-color);
+    height: 3px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.about .lead{
+    font-size: 1.25rem;
+    font-weight: 300;
+
+}
+/* End About Section */
+/* Start Services Section */
+.services{
+    padding-top: 48px;
+}
+.services .card{
+    border: 0;
+    border-bottom: 1px rgba(0, 0, 0, 0.158) solid;
+}
+.services .card .icon{
+    width: fit-content;
+    border: 10px solid var(--main-color);
+    transition: all 0.3s;
+}
+.services .card:hover .icon{
+    background-color: var(--main-color);
+    border:10px solid var(--secondary-color);
+}
+.services .card i{
+    font-size: 40px;
+    transition: all 0.3s;
+    color: var(--section-title-color);
+}
+.services .card:hover i{
+    color: white;
+}
+.services .card h2{
+    font-size: 1.4em;
+    color: var(--section-title-color);
+}
+.services .card p{
+    color: var(--section-discription-color);
+}
+/* End Services Section */
+/*Start Layer Section*/
+.layer{
+    background-image: url("/Photos/counters-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    background-attachment: fixed;
+    padding-block: 120px;
+}
+.layer::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0077ffb4;
+}
+.layer .container{
+    position: relative;
+}
+.layer .item{
+    text-align: center;
+}
+.layer .icon i{
+    border: 10px var(--secondary-color) solid;
+    font-size: 2rem;
+    color: white;
+    padding: 15px;
+}
+.layer .item p:first-of-type{
+    font-size: 2rem;
+}
+/* End Layer Section */
+/*Start Portofolio Section*/
+.portfolio {
+    padding-top: 64px;
+}
+.portfolio .card img{
+    transition: all 0.6s;
+}
+.portfolio .card{
+    border: 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.144);
+}
+.portfolio .card:hover img{
+    transform: scale(1.3);
+}
+
+.portfolio .mainButton {
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: translateY(5px);
+}
+
+.portfolio .mainButton a {
+    line-height: 1;
+    text-decoration: none;
+    font-size: 25px;
+    padding-inline: 2px;
+}
+.portfolio .card .content h5{
+    color: var(--section-title-color);
+}
+.portfolio .card .content p{
+    font-size: 0.8rem;
+    color: var(--section-discription-color);
+}
+.portfolio .card .content span{
+    color: var(--main-color);
+}
+/*End Portofolio Section*/
+/* Start People Section */
+.people{
+    background-image: url("/Photos/overlay-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+    padding-block: 120px;
+}
+.people::after{
+    content: '';
+    background-color: #0077ffb4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.people .container{
+    position: relative;
+    z-index: 1;
+}
+.people .carousel-indicators{
+    position: static !important;
+}
+.people .content p:last-of-type{
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+.people .carousel-indicators button{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+}
+/* End People Section */
+/* Start Blog Section */
+
+.blog .card-footer img{
+    width: 32px;
+    height: 32px;
+}
+.blog .badge{
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 0;
+    height: 30px;
+    align-items: center;
+    display: inline-flex;
+    transform: translateY(-50%);
+}
+.blog .card-body{
+    padding-top: 0;
+}
+.blog .card-body a{
+    color: var(--section-title-color);
+    transition: all 0.3s;
+}
+.blog .card-body a:hover{
+    color: var(--main-color);
+}
+.blog .card-body p{
+    color: var(--section-discription-color);
+}
+
+.blog .card-footer p{
+    transform: translateY(3px);
+}
+.blog .card-footer span{
+    color: var(--section-discription-color);
+}
+.blog .info p{
+    transition: all 0.3s;
+}
+.blog .info p:hover{
+    color: var(--main-color);
+    cursor: pointer;
+}
+/* End Blog Section */
+/* Start Contact Section */
+.contact{
+    position: relative;
+    background-image: url("/Photos/overlay-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    padding-block: 100px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.151);
+}
+.contact::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0077ff85;
+}
+.contact .container{
+    position: relative;
+    z-index: 5;
+    background-color: white ;
+}
+.contact .container h3{
+    position: relative;
+    padding-block: 20px;
+    margin-bottom: 30px;
+}
+.contact .container h3:after{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: var(--main-color);
+    bottom: 0px;
+    left: 0;
+}
+.contact form textarea{
+    height: 131px;
+}
+
+.contact form textarea:focus{
+    outline:  var(--secondary-color) solid 4px;
+    border:  var(--main-color) 1px solid !important;
+}
+
+.contact form input:focus{
+    outline:  var(--secondary-color) solid 4px;
+    border:  var(--main-color) 1px solid !important;
+}
+.contact .content{
+    color: var(--section-discription-color);
+}
+.contact .mainP{
+    font-size: 1.25rem !important;
+    font-weight: 300;
+}
+.contact .info p{
+    font-size: 1rem;
+}
+.contact .info p i{
+    color: var(--main-color);
+}
+.contact .info .icons span i{
+    color: black;
+    transition: all 0.3ms;
+}
+.contact .info .icons span:hover i{
+    color: white;
+}
+.contact .info .icons{
+    padding-block: 24px;
+}
+.contact .info .icons span{
+    border: 3px solid var(--main-color);
+    padding: 10px 13px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.contact .info .icons span:hover{
+    background-color: var(--main-color);
+    border: 3px solid var(--secondary-color);
+}
+/* End Contact Section */
+.footer{
+    background: #0062d3;
+    margin: 0;
+    padding: 25px 0px;
+}

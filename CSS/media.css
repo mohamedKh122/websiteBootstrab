@@ -1,0 +1,96 @@
+/* Small Screen */
+@media screen and (min-width: 640px){
+    .sm-100{
+        width: 100%;
+    }
+    .sm-50{
+        width: 50%;
+    }
+    .sm-33{
+        width: 33%;
+    }
+    .sm-25{
+        width: 25%;
+    }
+}
+/* Medium Screen */
+@media screen and (min-width: 768px){
+    .md-100{
+        width: 100%;
+    }
+    .md-50{
+        width: 50%;
+    }
+    .md-33{
+        width: 33%;
+    }
+    .md-25{
+        width: 25%;
+    }
+}
+/* Large Screen */
+@media screen and (min-width: 1024px){
+    .lg-100{
+        width: 100%;
+    }
+    .lg-50{
+        width: 50%;
+    }
+    .lg-33{
+        width: 33%;
+    }
+    .lg-25{
+        width: 25%;
+    }
+}
+
+/* XL Screen */
+@media screen and (min-width: 1280px){
+    .xl-100{
+        width: 100%;
+    }
+    .xl-50{
+        width: 50%;
+    }
+    .xl-33{
+        width: 33%;
+    }
+    .xl-25{
+        width: 25%;
+    }
+}
+@media (min-width: 992px) {
+    
+}
+@media screen and (max-width: 768px){
+    /*The Nav Bar*/
+    .navbar ul{
+        background-color: white;
+        height:90vh;
+    }
+    .navbar ul li a{
+        color: #1e1e1e !important;
+    }
+    .navbar ul li a:hover{
+        color: #0078ff !important;
+    }
+    /*The Nav Bar*/
+    .hero .hero-content h1{
+        font-size: 3rem;
+    }
+    .hero .animated-text{
+        font-size: 1.5rem;
+    }
+    /* About Section */
+    .about-all-info{
+        flex-wrap: wrap;
+    }
+    .about-all-info .about-info{
+        flex-basis: 50%;
+        padding: 0 !important;
+    }
+    .about-all-info .image{
+        flex-basis: 50%;
+    }
+    /* About Section */
+}
